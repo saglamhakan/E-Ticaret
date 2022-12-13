@@ -44,8 +44,8 @@ public class ProductManager implements ProductService {
     }
 
     @Override
-    public DataResult<Products> getById(int id) {
-        this.productsDao.getByProductId(id);
+    public DataResult<Products> getByCategoryId(int categoryId) {
+        this.productsDao.getByProductId(categoryId);
         return null;
 
     }

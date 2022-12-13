@@ -10,7 +10,7 @@ public interface ProductService {
     DataResult<List<Products>> getAll();
     DataResult<List<Products>> getAll(int pageNo, int pageSize);
     Result add (Products products);
-    DataResult<Products> getById(int id);
+    DataResult<Products> getByCategoryId(int categoryId);
 
 
 
