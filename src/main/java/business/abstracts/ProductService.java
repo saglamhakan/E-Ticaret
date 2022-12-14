@@ -2,15 +2,15 @@ package business.abstracts;
 
 import core.result.DataResult;
 import core.result.Result;
-import entities.concretes.Products;
+import entities.concretes.Product;
 
 import java.util.List;
 
 public interface ProductService {
-    DataResult<List<Products>> getAll();
-    DataResult<List<Products>> getAll(int pageNo, int pageSize);
-    Result add (Products products);
-    DataResult<Products> getByCategoryId(int categoryId);
+    DataResult<List<Product>> getAll();
+    DataResult<List<Product>> getAll(int pageNo, int pageSize);
+    Result add (Product product);
+    DataResult<Product> getByCategoryId(int categoryId);
 
 
 

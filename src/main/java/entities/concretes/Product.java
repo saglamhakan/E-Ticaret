@@ -13,20 +13,29 @@ import java.util.List;
 @Entity
 @Table(name = "/products")
 
-public class Products {
+public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "product_name")
-    private String productName;
     @Column(name = "product_id")
     private int productId;
+
+    @Column(name = "product_name")
+    private String productName;
+
     @Column(name = "product_price")
     private int productPrice;
 
+    @Column(name = "unit_in_stock")
+    private int unitInStock;
+
+    @Column(name = "product_color")
+    private String productColor;
+
     @ManyToOne
     @JoinColumn(name = "category_id")
-    private Categories categories;
+    private Category category;
 
-
+    @OneToMany(mappedBy = "product")
+    private List<Color> colors;
 }

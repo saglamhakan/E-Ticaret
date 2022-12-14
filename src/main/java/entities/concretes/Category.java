@@ -12,15 +12,18 @@ import java.util.List;
 @AllArgsConstructor
 @Entity
 @Table(name = "categories")
-public class Categories {
+public class Category {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "category_name")
-    private String categoryName;
     @Column(name = "category_id")
     private int categoryId;
 
-    @OneToMany(mappedBy = "categories")
-    private List<Products> products;
+    @Column(name = "category_name")
+    private String categoryName;
+
+
+    @OneToMany(mappedBy = "category")
+    private List<Product> products;
+
 }

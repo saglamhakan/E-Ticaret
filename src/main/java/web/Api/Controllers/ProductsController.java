@@ -3,7 +3,7 @@ package web.Api.Controllers;
 import business.abstracts.ProductService;
 import core.result.DataResult;
 import core.result.Result;
-import entities.concretes.Products;
+import entities.concretes.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,16 +20,16 @@ public class ProductsController {
     }
 
     @GetMapping("/getAll")
-    public DataResult<List<Products>> getAll() {
+    public DataResult<List<Product>> getAll() {
         return this.productService.getAll();
     }
 
     @PostMapping("/add")
-    public Result add(@RequestBody Products products) {
-        return this.productService.add(products);
+    public Result add(@RequestBody Product product) {
+        return this.productService.add(product);
     }
 
-    public DataResult<Products> getByCategoryId(int categoryId) {
+    public DataResult<Product> getByCategoryId(int categoryId) {
         return this.productService.getByCategoryId(categoryId);
     }
 

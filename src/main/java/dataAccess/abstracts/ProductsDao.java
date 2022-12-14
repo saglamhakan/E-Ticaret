@@ -1,15 +1,14 @@
 package dataAccess.abstracts;
 
-import entities.concretes.Products;
+import entities.concretes.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.awt.print.Pageable;
-import java.net.ContentHandler;
 
-public interface ProductsDao extends JpaRepository<Products, Integer> {
+public interface ProductsDao extends JpaRepository<Product, Integer> {
 
-    Products getByProductName(String productName);
-    Products getByProductId(int productId);
+    Product getByProductName(String productName);
+    Product getByProductId(int productId);
 
-    Products findAll(Pageable pageable);
+    Product findAll(Pageable pageable);
 }
